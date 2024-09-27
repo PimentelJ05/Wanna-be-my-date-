@@ -2,7 +2,7 @@
 
 Welcome to the most romantic and fun project you'll see today! 😍 This is a playful page built using HTML, CSS, and JavaScript to ask the classic question: "Will you be my date?" But with a twist—because, of course, it’s never that simple! 😂
 
-# What’s This About? 🤔
+## What’s This About? 🤔
 
 Imagine you ask someone out, but the "No" button keeps running away, making it impossible to reject you! 😈 Meanwhile, if they finally give up and click "Yes," a song starts playing and you win their heart! 💖
 
@@ -15,18 +15,18 @@ Imagine you ask someone out, but the "No" button keeps running away, making it i
 How to Check It Out 💻
 The page is live and waiting for your click! You can visit the website through this link:
 
-👉 Check it Out Here!
+## 👉 Check it Out Here!
 
 ## Wanna Clone It? 🤓
 
 Want to impress someone with your own version? Here’s how you can run it locally:
 
-Clone the repo:
+## Clone the repo:
 
 git clone https://github.com/PimentelJ05/Wanna-be-my-date.git
 Open the index.html file in your favorite browser, and let the magic happen! ✨
 
-Can You Improve It? 🔧
+## Can You Improve It? 🔧
 
 If you have some fun ideas (like adding more sneaky buttons or maybe a confetti explosion), feel free to fork the project and submit a pull request! Contributions are always welcome. 🛠️
 
