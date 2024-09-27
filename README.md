@@ -1,10 +1,13 @@
 Wanna Be My Date? 💘
+
 Welcome to the most romantic and fun project you'll see today! 😍 This is a playful page built using HTML, CSS, and JavaScript to ask the classic question: "Will you be my date?" But with a twist—because, of course, it’s never that simple! 😂
 
 What’s This About? 🤔
+
 Imagine you ask someone out, but the "No" button keeps running away, making it impossible to reject you! 😈 Meanwhile, if they finally give up and click "Yes," a song starts playing and you win their heart! 💖
 
 Key Features
+
 💖 "Yes" Button: Click it, and a lovely surprise awaits (hint: a catchy song)!
 😈 "No" Button: This naughty button just won’t stay still! It moves around the screen whenever you try to click it. Good luck!
 ❤️ Floating Hearts: Because why not add some extra romance to the scene?
