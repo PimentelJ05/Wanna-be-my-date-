@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quer Namorar Comigo?</title>
     <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500&display=swap');
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f8ff;
-            font-family: Arial, sans-serif;
+            background-color: #ffb6c1; 
+            font-family: 'Bodoni Moda', 'Bodoni MT', serif; 
+            margin: 0;
+            overflow: hidden;
         }
 
         .container {
@@ -20,17 +25,21 @@
             padding: 30px;
             border-radius: 15px;
             background: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
         }
 
         h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #ff007f; 
         }
 
         .buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
         }
 
         button {
@@ -39,6 +48,12 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
         }
 
         #sim {
@@ -50,6 +65,48 @@
             background-color: #dc3545;
             color: white;
             position: absolute;
+            transition: all 0.1s;
+        }
+
+       
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff69b4;
+            transform: rotate(45deg);
+            animation: float 5s infinite ease-in-out;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #ff69b4;
+        }
+
+        .heart:before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 10px;
+            top: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-200px) rotate(45deg);
+                opacity: 0;
+            }
         }
     </style>
 </head>
@@ -62,24 +119,30 @@
         </div>
     </div>
 
+    
+    <div class="heart" style="left: 20%; animation-delay: 0s;"></div>
+    <div class="heart" style="left: 40%; animation-delay: 1s;"></div>
+    <div class="heart" style="left: 60%; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 80%; animation-delay: 3s;"></div>
+
     <audio id="musica" src="https://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand60.wav" type="audio/mpeg"></audio>
 
     <script>
-        // Selecionar os botões e o áudio
+     
         const btnNao = document.getElementById('nao');
         const btnSim = document.getElementById('sim');
         const musica = document.getElementById('musica');
 
-        // Quando o mouse passar pelo botão "Não", ele se move para um local aleatório
+    
         btnNao.addEventListener('mouseover', () => {
-            // Definir posições aleatórias para o botão dentro da tela
+            
             const x = Math.random() * (window.innerWidth - btnNao.offsetWidth);
             const y = Math.random() * (window.innerHeight - btnNao.offsetHeight);
             btnNao.style.left = `${x}px`;
             btnNao.style.top = `${y}px`;
         });
 
-        // Quando clicar no botão "Sim", a música começa a tocar
+ 
         btnSim.addEventListener('click', () => {
             musica.play();
             alert("Eu sabia que você diria SIM! 💖");
