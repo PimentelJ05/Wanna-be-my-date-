@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quer Namorar Comigo?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid #000;
+            padding: 30px;
+            border-radius: 15px;
+            background: #ffffff;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #sim {
+            background-color: #28a745;
+            color: white;
+        }
+
+        #nao {
+            background-color: #dc3545;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Você quer namorar comigo?</h1>
+        <div class="buttons">
+            <button id="sim">Sim</button>
+            <button id="nao">Não</button>
+        </div>
+    </div>
+
+    <audio id="musica" src="https://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand60.wav" type="audio/mpeg"></audio>
+
+    <script>
+        // Selecionar os botões e o áudio
+        const btnNao = document.getElementById('nao');
+        const btnSim = document.getElementById('sim');
+        const musica = document.getElementById('musica');
+
+        // Quando o mouse passar pelo botão "Não", ele se move para um local aleatório
+        btnNao.addEventListener('mouseover', () => {
+            // Definir posições aleatórias para o botão dentro da tela
+            const x = Math.random() * (window.innerWidth - btnNao.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btnNao.offsetHeight);
+            btnNao.style.left = `${x}px`;
+            btnNao.style.top = `${y}px`;
+        });
+
+        // Quando clicar no botão "Sim", a música começa a tocar
+        btnSim.addEventListener('click', () => {
+            musica.play();
+            alert("Eu sabia que você diria SIM! 💖");
+        });
+    </script>
+</body>
+</html>
