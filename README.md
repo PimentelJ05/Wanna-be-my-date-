@@ -18,16 +18,20 @@ The page is live and waiting for your click! You can visit the website through t
 👉 Check it Out Here!
 
 Wanna Clone It? 🤓
+
 Want to impress someone with your own version? Here’s how you can run it locally:
 
 Clone the repo:
+
 git clone https://github.com/PimentelJ05/Wanna-be-my-date.git
 Open the index.html file in your favorite browser, and let the magic happen! ✨
 
 Can You Improve It? 🔧
+
 If you have some fun ideas (like adding more sneaky buttons or maybe a confetti explosion), feel free to fork the project and submit a pull request! Contributions are always welcome. 🛠️
 
 Special Thanks 💌
+
 To the JS gods for making the buttons run away.
 To CSS for keeping it all pretty.
 And, of course, to you, for checking out this project! 🙏
