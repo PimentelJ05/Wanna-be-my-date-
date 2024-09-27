@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quer Namorar Comigo?</title>
     <style>
-        
         @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500&display=swap');
 
         body {
@@ -72,7 +71,6 @@
             transition: all 0.1s;
         }
 
-        
         .heart {
             position: absolute;
             width: 20px;
@@ -123,7 +121,6 @@
         </div>
     </div>
 
-    
     <div class="heart" style="left: 20%; animation-delay: 0s;"></div>
     <div class="heart" style="left: 40%; animation-delay: 1s;"></div>
     <div class="heart" style="left: 60%; animation-delay: 2s;"></div>
@@ -132,19 +129,31 @@
     <audio id="musica" src="https://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand60.wav" type="audio/mpeg"></audio>
 
     <script>
-        
+        // Selecionar os botões e o áudio
         const btnNao = document.getElementById('nao');
         const btnSim = document.getElementById('sim');
         const musica = document.getElementById('musica');
 
-       
-         // Quando o mouse passar pelo botão "Não", ele se move para um local aleatório
-        btnNao.addEventListener('mouseover', () => {
-            // Definir posições aleatórias para o botão dentro da tela
+        // Definir o intervalo para mover o botão "Não" continuamente quando o mouse estiver sobre ele
+        let moveInterval;
+
+        // Movimentar o botão para uma posição aleatória
+        function moveButton() {
             const x = Math.random() * (window.innerWidth - btnNao.offsetWidth);
             const y = Math.random() * (window.innerHeight - btnNao.offsetHeight);
             btnNao.style.left = `${x}px`;
             btnNao.style.top = `${y}px`;
+        }
+
+        // Quando o mouse passar pelo botão "Não", começa a movimentar rapidamente
+        btnNao.addEventListener('mouseover', () => {
+            clearInterval(moveInterval);
+            moveInterval = setInterval(moveButton, 200); // Mover o botão a cada 200ms
+        });
+
+        // Quando o mouse sair do botão "Não", para o movimento
+        btnNao.addEventListener('mouseout', () => {
+            clearInterval(moveInterval);
         });
 
         // Quando clicar no botão "Sim", a música começa a tocar
@@ -152,6 +161,7 @@
             musica.play();
             alert("Eu sabia que você diria SIM! 💖");
         });
+
     </script>
 </body>
 </html>
