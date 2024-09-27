@@ -13,8 +13,8 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #ffb6c1; 
-            font-family: 'Bodoni Moda', 'Bodoni MT', serif; 
+            background-color: #ffb6c1; /* Cor do fundo (rosa claro) */
+            font-family: 'Bodoni Moda', 'Bodoni MT', serif; /* Fonte Bodoni */
             margin: 0;
             overflow: hidden;
         }
@@ -33,13 +33,14 @@
         h1 {
             font-size: 2.5rem;
             margin-bottom: 30px;
-            color: #ff007f; 
+            color: #ff007f; /* Cor do texto */
         }
 
         .buttons {
             display: flex;
             justify-content: center;
             gap: 30px;
+            position: relative;
         }
 
         button {
@@ -65,10 +66,13 @@
             background-color: #dc3545;
             color: white;
             position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             transition: all 0.1s;
         }
 
-       
+        
         .heart {
             position: absolute;
             width: 20px;
@@ -128,21 +132,28 @@
     <audio id="musica" src="https://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand60.wav" type="audio/mpeg"></audio>
 
     <script>
-     
+        
         const btnNao = document.getElementById('nao');
         const btnSim = document.getElementById('sim');
         const musica = document.getElementById('musica');
 
-    
-        btnNao.addEventListener('mouseover', () => {
-            
+       
+        function randomPosition() {
             const x = Math.random() * (window.innerWidth - btnNao.offsetWidth);
             const y = Math.random() * (window.innerHeight - btnNao.offsetHeight);
             btnNao.style.left = `${x}px`;
             btnNao.style.top = `${y}px`;
+        }
+
+        
+        randomPosition();
+
+        
+        btnNao.addEventListener('mouseover', () => {
+            randomPosition();
         });
 
- 
+        
         btnSim.addEventListener('click', () => {
             musica.play();
             alert("Eu sabia que você diria SIM! 💖");
