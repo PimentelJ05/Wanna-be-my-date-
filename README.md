@@ -33,5 +33,7 @@ If you have some fun ideas (like adding more sneaky buttons or maybe a confetti 
 # Special Thanks 💌
 
 To the JS gods for making the buttons run away.
+
 To CSS for keeping it all pretty.
+
 And, of course, to you, for checking out this project! 🙏
