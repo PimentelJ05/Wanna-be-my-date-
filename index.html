@@ -134,26 +134,24 @@
         const btnSim = document.getElementById('sim');
         const musica = document.getElementById('musica');
 
-        // Definir o intervalo para mover o botão "Não" continuamente quando o mouse estiver sobre ele
-        let moveInterval;
-
         // Movimentar o botão para uma posição aleatória
         function moveButton() {
-            const x = Math.random() * (window.innerWidth - btnNao.offsetWidth);
-            const y = Math.random() * (window.innerHeight - btnNao.offsetHeight);
+            // Calcular a posição máxima para garantir que o botão não saia da tela
+            const maxX = window.innerWidth - btnNao.offsetWidth;
+            const maxY = window.innerHeight - btnNao.offsetHeight;
+
+            // Gerar posições aleatórias dentro do limite
+            const x = Math.random() * maxX;
+            const y = Math.random() * maxY;
+
+            // Aplicar as novas posições
             btnNao.style.left = `${x}px`;
             btnNao.style.top = `${y}px`;
         }
 
-        // Quando o mouse passar pelo botão "Não", começa a movimentar rapidamente
+        // Quando o mouse passar pelo botão "Não", ele se move para um local visível e aleatório
         btnNao.addEventListener('mouseover', () => {
-            clearInterval(moveInterval);
-            moveInterval = setInterval(moveButton, 200); // Mover o botão a cada 200ms
-        });
-
-        // Quando o mouse sair do botão "Não", para o movimento
-        btnNao.addEventListener('mouseout', () => {
-            clearInterval(moveInterval);
+            moveButton();
         });
 
         // Quando clicar no botão "Sim", a música começa a tocar
